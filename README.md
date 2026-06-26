@@ -323,9 +323,9 @@ to execute browser-side assertions.
 
 # 👨‍💻 Author
 
-**Your Name**
+**Aiman Faisal**
 
-Computer Science Student
+DataScience Student
 
 AI • Machine Learning • Full Stack Development • Sustainable Computing
 
