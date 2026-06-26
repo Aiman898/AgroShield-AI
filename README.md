@@ -43,7 +43,7 @@ Everything runs locally using:
 * Custom AST mathematical compiler
 * Secure JSON-RPC MCP server
 * <img width="1915" height="892" alt="Image" src="https://github.com/user-attachments/assets/51ca0bc2-be19-404f-a243-6b6844a122c0" />
-<img width="572" height="855" alt="Image" src="https://github.com/user-attachments/assets/0ecf4631-bdf3-4d48-83af-66d185dcf59a" />
+
 ---
 
 # ✨ Features
