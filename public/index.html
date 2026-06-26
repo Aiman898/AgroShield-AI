@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroShield - AI Multi-Agent Decision System</title>
+  <!-- Google Fonts: Inter and Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Nav Header -->
+    <header class="main-header">
+      <div class="logo-container">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8v8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 11h6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">Agro<span class="logo-accent">Shield</span></span>
+      </div>
+      <div class="system-status">
+        <div class="badge offline-badge">
+          <span class="pulse-dot grey"></span> Offline Core
+        </div>
+        <div class="badge secure-badge">
+          <span class="lock-icon">🔒</span> Secure Sandbox
+        </div>
+        <div class="status-indicator">
+          <span class="pulse-dot green"></span>
+          <span class="status-label">Local Node: Active</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Grid Dashboard Layout -->
+    <main class="dashboard-grid">
+      
+      <!-- Left Column: Agent Collaboration & Chat -->
+      <section class="grid-card chat-section">
+        <div class="card-header">
+          <h3>Multi-Agent Command Center</h3>
+          <p class="subtitle">Real-time collaboration logs between autonomous agents</p>
+        </div>
+        
+        <!-- Agent Status Monitor -->
+        <div class="agent-status-panel">
+          <div class="agent-node" id="agent-farmer">
+            <span class="node-pulse yellow"></span>
+            <div class="node-info">
+              <div class="node-name">Farmer Agent</div>
+              <div class="node-role">Orchestrator</div>
+            </div>
+          </div>
+          <div class="agent-node" id="agent-disease">
+            <span class="node-pulse grey"></span>
+            <div class="node-info">
+              <div class="node-name">Disease Agent</div>
+              <div class="node-role">Diagnostic DB</div>
+            </div>
+          </div>
+          <div class="agent-node" id="agent-health">
+            <span class="node-pulse grey"></span>
+            <div class="node-info">
+              <div class="node-name">Health Agent</div>
+              <div class="node-role">Toxicology</div>
+            </div>
+          </div>
+          <div class="agent-node" id="agent-task">
+            <span class="node-pulse grey"></span>
+            <div class="node-info">
+              <div class="node-name">Task Agent</div>
+              <div class="node-role">Optimization</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Output Terminal -->
+        <div class="chat-terminal" id="chat-messages">
+          <div class="agent-message system-log">
+            <div class="msg-meta">System Core</div>
+            <div class="msg-content">Welcome to AgroShield Offline Node. System status fully operational. Ready to analyze agricultural query variables.</div>
+          </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form class="chat-input-area" id="chat-form">
+          <input type="text" id="chat-input" placeholder="Describe crop anomalies (e.g., 'Tomato leaves have brown spots with target rings')..." required autocomplete="off">
+          <button type="submit" class="btn-primary">
+            <span>Analyze</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="send-icon">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+      <!-- Center Column: Quick Diagnosis & Secure Calculator -->
+      <div class="center-column">
+        
+        <!-- Diagnostic Preset Selector -->
+        <section class="grid-card quick-diagnose">
+          <div class="card-header">
+            <h3>Symptom Selector</h3>
+            <p class="subtitle">Manually trigger diagnostic database tool matching</p>
+          </div>
+          <div class="symptom-presets">
+            <div class="crop-select-group">
+              <label for="crop-dropdown">Target Crop</label>
+              <select id="crop-dropdown">
+                <option value="Tomato/Potato">Tomato / Potato</option>
+                <option value="Cucumber/Squash/Melon">Cucumber / Squash</option>
+                <option value="Corn/Beans">Corn / Beans</option>
+              </select>
+            </div>
+            <div class="symptom-checkboxes">
+              <label class="chk-container">Brown Leaf Spots
+                <input type="checkbox" name="symptoms" value="brown spots">
+                <span class="checkmark"></span>
+              </label>
+              <label class="chk-container">Target-like Rings
+                <input type="checkbox" name="symptoms" value="target-like rings">
+                <span class="checkmark"></span>
+              </label>
+              <label class="chk-container">White Powdery Mold
+                <input type="checkbox" name="symptoms" value="white powdery coating">
+                <span class="checkmark"></span>
+              </label>
+              <label class="chk-container">Rapid Stem Rotting
+                <input type="checkbox" name="symptoms" value="black stems">
+                <span class="checkmark"></span>
+              </label>
+              <label class="chk-container">Orange Leaf Pustules
+                <input type="checkbox" name="symptoms" value="orange pustules">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <button class="btn-secondary" id="btn-run-symptoms">Query Disease DB</button>
+          </div>
+        </section>
+
+        <!-- Secure AST Dosing Calculator -->
+        <section class="grid-card dose-calculator">
+          <div class="card-header font-bold">
+            <h3>Safe Math Calculator</h3>
+            <span class="badge secure-calc-badge">AST Parser Active</span>
+            <p class="subtitle">Runs dosage formulation safely without dynamic evaluation risk</p>
+          </div>
+          <div class="calc-body">
+            <div class="input-row">
+              <div class="input-group">
+                <label>Chemical Qty (Liters)</label>
+                <input type="number" id="calc-qty" value="2.5" step="0.1" min="0.1">
+              </div>
+              <div class="input-group">
+                <label>Water Qty (Liters)</label>
+                <input type="number" id="calc-water" value="500" step="10" min="1">
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Mathematical Formulation Formula</label>
+              <input type="text" id="calc-expression" value="(chemical_qty * 1000) / water_qty" class="code-font">
+            </div>
+            <button class="btn-accent" id="btn-calculate">Run Secure Calculation</button>
+            <div class="calc-result-panel hidden" id="calc-result-box">
+              <div class="calc-res-title">Security Proof & Result:</div>
+              <div class="code-output" id="calc-code-output"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- System Security & Verification Tests -->
+        <section class="grid-card system-tests">
+          <div class="card-header">
+            <h3>Security & Logic Test Suite</h3>
+            <p class="subtitle">Run real-time assertions on sandbox, sanitization, and agent flows</p>
+          </div>
+          <div class="test-body">
+            <button class="btn-secondary" id="btn-run-tests" style="border-color: var(--accent-teal); color: var(--accent-teal);">Run Security & Logic Tests</button>
+            <div class="calc-result-panel hidden" id="test-results-box" style="margin-top: 1rem;">
+              <div class="calc-res-title" id="test-summary-text" style="color: var(--text-main); font-weight: bold; margin-bottom: 0.5rem;">Running Tests...</div>
+              <div class="code-output" id="test-matrix-output" style="max-height: 150px; overflow-y: auto; font-size: 0.7rem;"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: Real-time Reports & Health Alerts -->
+      <section class="grid-card report-section">
+        <div class="card-header">
+          <h3>Real-time Farm Health Metrics</h3>
+          <p class="subtitle">Agent consensus updates automatically on query analysis</p>
+        </div>
+
+        <!-- Metric 1: Diagnostic Report Card -->
+        <div class="report-card metric-card" id="card-diagnostic">
+          <div class="metric-icon">🦠</div>
+          <div class="metric-details">
+            <div class="metric-title">Crop Diagnosis</div>
+            <div class="metric-value" id="val-diagnosis">Awaiting Diagnosis...</div>
+            <div class="metric-footer" id="val-biological">Submit symptoms to start local evaluation</div>
+          </div>
+        </div>
+
+        <!-- Metric 2: Public Health & Toxicity Meter -->
+        <div class="report-card metric-card" id="card-health">
+          <div class="metric-icon">⚠️</div>
+          <div class="metric-details">
+            <div class="metric-title">Human Health Advisory</div>
+            <div class="metric-value font-bold" id="val-health-class">Safe / Idle</div>
+            <div class="health-indicators">
+              <div class="indicator-bar">
+                <div class="indicator-fill" id="val-risk-bar" style="width: 0%"></div>
+              </div>
+              <div class="time-durations">
+                <div class="time-block">
+                  <span class="label">Re-Entry Interval</span>
+                  <span class="val font-semibold" id="val-rei">N/A</span>
+                </div>
+                <div class="time-block">
+                  <span class="label">Pre-Harvest Wait</span>
+                  <span class="val font-semibold" id="val-phi">N/A</span>
+                </div>
+              </div>
+            </div>
+            <div class="metric-footer" id="val-health-advice">No chemical treatments currently evaluated.</div>
+          </div>
+        </div>
+
+        <!-- Metric 3: Optimized Task Card -->
+        <div class="report-card metric-card" id="card-task">
+          <div class="metric-icon">📅</div>
+          <div class="metric-details">
+            <div class="metric-title">Optimized Task Plan</div>
+            <div class="task-plan-details" id="val-task-details">
+              <div class="empty-state">No scheduled tasks.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer System Specs -->
+    <footer class="app-footer">
+      <div>AgroShield Core v1.0.0 (Local System Node)</div>
+      <div class="footer-links">
+        <span>MCP Version: 2024-11-05</span>
+        <span>•</span>
+        <span>Secure Calculation: AST sandboxed</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
