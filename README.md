@@ -42,6 +42,7 @@ Everything runs locally using:
 * Keyword matching
 * Custom AST mathematical compiler
 * Secure JSON-RPC MCP server
+* <img width="1915" height="892" alt="Image" src="https://github.com/user-attachments/assets/51ca0bc2-be19-404f-a243-6b6844a122c0" />
 
 ---
 
