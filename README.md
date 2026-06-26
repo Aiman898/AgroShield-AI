@@ -43,7 +43,7 @@ Everything runs locally using:
 * Custom AST mathematical compiler
 * Secure JSON-RPC MCP server
 * <img width="1915" height="892" alt="Image" src="https://github.com/user-attachments/assets/51ca0bc2-be19-404f-a243-6b6844a122c0" />
-
+<img width="572" height="855" alt="Image" src="https://github.com/user-attachments/assets/0ecf4631-bdf3-4d48-83af-66d185dcf59a" />
 ---
 
 # ✨ Features
@@ -58,6 +58,8 @@ Everything runs locally using:
 Each agent specializes in one domain and collectively reaches a consensus before responding.
 
 ---
+
+<img width="647" height="822" alt="Image" src="https://github.com/user-attachments/assets/67c25840-742d-4a8f-be4a-c0bb515076d5" />
 
 ## 🔌 Offline MCP Server
 
